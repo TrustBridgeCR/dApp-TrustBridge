@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { DashboardFooter } from "@/components/layouts/dashboard-footer";
 import { DashboardHeader } from "@/components/layouts/dashboard-header";
@@ -6,7 +6,7 @@ import { DashboardSidebar } from "@/components/layouts/dashboard-sidebar";
 import { RouteGuard } from "@/components/auth/RouteGuard";
 import React, { useState } from "react";
 
-export default function DashboardLayout({
+export default function LenderLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -15,7 +15,7 @@ export default function DashboardLayout({
   const [, setLanguage] = useState<"es" | "en" | "fr" | "de">("en");
 
   return (
-    <RouteGuard allowedRoles={['Borrower']}>
+    <RouteGuard allowedRoles={['Lender']}>
       <div className={`flex min-h-screen ${theme === "dark" ? "dark" : ""}`}>
         <DashboardSidebar />
         <div className="flex-1 flex flex-col">
@@ -30,4 +30,4 @@ export default function DashboardLayout({
       </div>
     </RouteGuard>
   );
-}
+} 
